@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Morgan - Software Engineer Portfolio</title>
+    <meta name="description" content="Modern portfolio website showcasing software engineering projects and skills">
+    <meta name="keywords" content="software engineer, web developer, portfolio, JavaScript, HTML, CSS">
+    <meta name="author" content="Alex Morgan">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/css/variables.css" as="style">
+    <link rel="preload" href="assets/css/style.css" as="style">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="nav__logo" aria-label="Home">
+                    <span class="nav__logo-text">AM</span>
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="nav__hamburger-line"></span>
+                    <span class="nav__hamburger-line"></span>
+                    <span class="nav__hamburger-line"></span>
+                </button>
+                
+                <!-- Navigation menu -->
+                <ul class="nav__menu">
+                    <li class="nav__item"><a href="#hero" class="nav__link" data-nav-link>Home</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link" data-nav-link>Projects</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link" data-nav-link>Skills</a></li>
+                    <li class="nav__item"><a href="#experience" class="nav__link" data-nav-link>Experience</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link" data-nav-link>Contact</a></li>
+                    <li class="nav__item">
+                        <button class="theme-toggle" aria-label="Toggle dark mode">
+                            <span class="theme-toggle__icon" data-theme-icon>🌙</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="container">
+                <div class="hero__content">
+                    <p class="hero__greeting">Hello, I'm</p>
+                    <h1 class="hero__title">Alex Morgan</h1>
+                    <h2 class="hero__subtitle">Full Stack Software Engineer</h2>
+                    <p class="hero__description">
+                        I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive. 
+                        Let's bring your ideas to life!
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="#projects" class="btn btn--primary" data-scroll-to>View Projects</a>
+                        <a href="#contact" class="btn btn--secondary" data-scroll-to>Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <!-- Placeholder for hero image -->
+                    <div class="hero__image-placeholder" role="img" aria-label="Alex Morgan, Software Engineer"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Featured Projects</h2>
+                    <p class="section__subtitle">A selection of my recent work</p>
+                </div>
+                
+                <!-- Project Filter -->
+                <div class="projects__filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="frontend">Frontend</button>
+                    <button class="filter-btn" data-filter="backend">Backend</button>
+                    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                </div>
+                
+                <!-- Projects Grid -->
+                <div class="projects__grid" id="projects-grid">
+                    <!-- Projects will be dynamically loaded from JSON -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Technical Skills</h2>
+                    <p class="section__subtitle">Technologies I work with, rated by proficiency</p>
+                </div>
+                
+                <!-- Skills Tabs Navigation -->
+                <div class="skills__tabs" role="tablist" aria-label="Skills categories">
+                    <button class="skills__tab active" data-tab="frontend" role="tab" aria-selected="true" aria-controls="frontend-panel">
+                        Frontend
+                    </button>
+                    <button class="skills__tab" data-tab="backend" role="tab" aria-selected="false" aria-controls="backend-panel">
+                        Backend
+                    </button>
+                    <button class="skills__tab" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools-panel">
+                        Tools & DevOps
+                    </button>
+                    <button class="skills__tab" data-tab="softSkills" role="tab" aria-selected="false" aria-controls="softskills-panel">
+                        Soft Skills
+                    </button>
+                </div>
+                
+                <!-- Skills Panels -->
+                <div class="skills__panels">
+                    <!-- Frontend Skills Panel -->
+                    <div id="frontend-panel" class="skills__panel active" role="tabpanel" aria-labelledby="frontend-tab">
+                        <div class="skills__list" id="frontend-skills">
+                            <!-- Dynamic content will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Backend Skills Panel -->
+                    <div id="backend-panel" class="skills__panel" role="tabpanel" aria-labelledby="backend-tab" hidden>
+                        <div class="skills__list" id="backend-skills">
+                            <!-- Dynamic content will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Tools Skills Panel -->
+                    <div id="tools-panel" class="skills__panel" role="tabpanel" aria-labelledby="tools-tab" hidden>
+                        <div class="skills__list" id="tools-skills">
+                            <!-- Dynamic content will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Soft Skills Panel -->
+                    <div id="softskills-panel" class="skills__panel" role="tabpanel" aria-labelledby="softskills-tab" hidden>
+                        <div class="skills__badges" id="softskills-badges">
+                            <!-- Dynamic content will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skill Summary Stats -->
+                <div class="skills__summary">
+                    <div class="skills__stat">
+                        <span class="skills__stat-number" id="total-skills">0</span>
+                        <span class="skills__stat-label">Total Skills</span>
+                    </div>
+                    <div class="skills__stat">
+                        <span class="skills__stat-number" id="avg-proficiency">0%</span>
+                        <span class="skills__stat-label">Average Proficiency</span>
+                    </div>
+                    <div class="skills__stat">
+                        <span class="skills__stat-number" id="total-years">0</span>
+                        <span class="skills__stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Experience & Education</h2>
+                    <p class="section__subtitle">My professional journey</p>
+                </div>
+                
+                <div class="timeline">
+                    <!-- Work Experience -->
+                    <div class="timeline__item">
+                        <div class="timeline__content">
+                            <span class="timeline__date">2022 - Present</span>
+                            <h3 class="timeline__title">Senior Software Engineer</h3>
+                            <h4 class="timeline__subtitle">Tech Solutions Inc.</h4>
+                            <p class="timeline__description">
+                                Led development of multiple web applications using modern JavaScript frameworks.
+                                Improved application performance by 40% through code optimization and caching strategies.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline__item">
+                        <div class="timeline__content">
+                            <span class="timeline__date">2020 - 2022</span>
+                            <h3 class="timeline__title">Full Stack Developer</h3>
+                            <h4 class="timeline__subtitle">Digital Innovations LLC</h4>
+                            <p class="timeline__description">
+                                Developed and maintained responsive web applications. 
+                                Collaborated with cross-functional teams to deliver high-quality software solutions.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education -->
+                    <div class="timeline__item">
+                        <div class="timeline__content">
+                            <span class="timeline__date">2016 - 2020</span>
+                            <h3 class="timeline__title">B.S. Computer Science</h3>
+                            <h4 class="timeline__subtitle">State University</h4>
+                            <p class="timeline__description">
+                                Graduated Summa Cum Laude with specialization in Software Engineering.
+                                Relevant coursework: Algorithms, Data Structures, Web Development, Database Systems.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="tag">Algorithms</span>
+                                <span class="tag">Data Structures</span>
+                                <span class="tag">Web Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Get In Touch</h2>
+                    <p class="section__subtitle">Let's work together!</p>
+                </div>
+                
+                <div class="contact__grid">
+                    <div class="contact__info">
+                        <h3 class="contact__info-title">Contact Information</h3>
+                        <p class="contact__info-text">
+                            I'm currently open to new opportunities and interesting projects. 
+                            Feel free to reach out if you'd like to collaborate!
+                        </p>
+                        
+                        <div class="contact__details">
+                            <div class="contact__detail">
+                                <span class="contact__detail-icon">📧</span>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:alex@example.com">alex@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact__detail">
+                                <span class="contact__detail-icon">📍</span>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>San Francisco, CA</p>
+                                </div>
+                            </div>
+                            <div class="contact__detail">
+                                <span class="contact__detail-icon">💼</span>
+                                <div>
+                                    <h4>Availability</h4>
+                                    <p>Open to opportunities</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__social">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <span class="contact__social-icon">🐱</span>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <span class="contact__social-icon">💼</span>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                                <span class="contact__social-icon">🐦</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form id="contact-form" class="contact__form" novalidate>
+                        <div class="form__group">
+                            <label for="name" class="form__label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form__input" required>
+                            <div class="form__error" id="name-error"></div>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form__input" required>
+                            <div class="form__error" id="email-error"></div>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="subject" class="form__label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form__input">
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="message" class="form__label">Message *</label>
+                            <textarea id="message" name="message" class="form__textarea" rows="5" required></textarea>
+                            <div class="form__error" id="message-error"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary form__submit">Send Message</button>
+                        
+                        <div class="form__success" id="form-success" style="display: none;">
+                            Message sent successfully! I'll get back to you soon.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__copyright">
+                    &copy; <span id="current-year">2024</span> Alex Morgan. All rights reserved.
+                </p>
+                <p class="footer__credits">
+                    Built with ❤️ using pure HTML, CSS, and JavaScript
+                </p>
+                <a href="#hero" class="footer__back-to-top" data-scroll-to aria-label="Back to top">
+                    ↑
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/form-validation.js" defer></script>
+    <script src="assets/js/theme-toogle.js" defer></script>
+    <script src="assets/js/skills-manager.js" defer></script>
+    <script src="data/projects.json" type="application/json" defer></script>
+    <script src="data/skills.json" type="application/json" defer></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Dashboard",
+      "description": "Real-time analytics dashboard with interactive charts for tracking sales, user behavior, and inventory management. Features data visualization, user management, and reporting tools.",
+      "tech": [
+        "JavaScript",
+        "Chart.js",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "D3.js"
+      ],
+      "image": "assets/images/projects/Screenshot (608).png",
+      "demo": "https://demo.example.com/ecommerce-dashboard",
+      "github": "https://github.com/alexmorgan/ecommerce-dashboard",
+      "type": "fullstack"
+    },
+    {
+      "id": 2,
+      "title": "Task Management App",
+      "description": "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Supports file attachments and notifications.",
+      "tech": [
+        "React",
+        "TypeScript",
+        "Firebase",
+        "Tailwind CSS",
+        "WebSockets"
+      ],
+      "image": "https://picsum.photos/600/400?random=2&grayscale",
+      "demo": "https://demo.example.com/task-manager",
+      "github": "https://github.com/alexmorgan/task-manager",
+      "type": "frontend"
+    },
+    {
+      "id": 3,
+      "title": "Weather Forecast API",
+      "description": "RESTful API for weather forecasting with caching, rate limiting, and support for multiple data providers. Includes documentation and client libraries.",
+      "tech": [
+        "Python",
+        "FastAPI",
+        "Redis",
+        "Docker",
+        "PostgreSQL",
+        "AWS"
+      ],
+      "image": "https://picsum.photos/600/400?random=3&grayscale",
+      "demo": "https://api.example.com/weather/docs",
+      "github": "https://github.com/alexmorgan/weather-api",
+      "type": "backend"
+    },
+    {
+      "id": 4,
+      "title": "Portfolio Website",
+      "description": "Responsive portfolio website built with pure HTML, CSS, and JavaScript featuring modern design, smooth animations, and accessibility compliance.",
+      "tech": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Git",
+        "GitHub Pages",
+        "Accessibility"
+      ],
+      "image": "https://picsum.photos/600/400?random=4&grayscale",
+      "demo": "https://alexmorgan.dev",
+      "github": "https://github.com/alexmorgan/portfolio",
+      "type": "frontend"
+    }
+  ]
+}

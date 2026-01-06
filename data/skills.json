@@ -1,0 +1,90 @@
+{
+  "skills": {
+    "frontend": [
+      {
+        "name": "HTML5",
+        "level": 95,
+        "icon": "🔧",
+        "years": 5,
+        "description": "Semantic HTML, accessibility, modern APIs"
+      },
+      {
+        "name": "CSS3",
+        "level": 90,
+        "icon": "🎨",
+        "years": 5,
+        "description": "Flexbox, Grid, animations, responsive design"
+      },
+      {
+        "name": "JavaScript",
+        "level": 92,
+        "icon": "⚡",
+        "years": 4,
+        "description": "ES6+, DOM manipulation, async programming"
+      }
+    ],
+    "backend": [
+      {
+        "name": "Node.js",
+        "level": 88,
+        "icon": "🟢",
+        "years": 3,
+        "description": "Express, REST APIs, middleware"
+      },
+      {
+        "name": "Python",
+        "level": 85,
+        "icon": "🐍",
+        "years": 4,
+        "description": "Django, Flask, data analysis"
+      },
+      {
+        "name": "MongoDB",
+        "level": 80,
+        "icon": "🍃",
+        "years": 3,
+        "description": "NoSQL, aggregation, indexing"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git",
+        "level": 90,
+        "icon": "📝",
+        "years": 4,
+        "description": "Version control, branching, collaboration"
+      },
+      {
+        "name": "Docker",
+        "level": 75,
+        "icon": "🐳",
+        "years": 2,
+        "description": "Containerization, Docker Compose"
+      },
+      {
+        "name": "AWS",
+        "level": 70,
+        "icon": "☁️",
+        "years": 2,
+        "description": "EC2, S3, Lambda, CloudFront"
+      }
+    ],
+    "softSkills": [
+      {
+        "name": "Problem Solving",
+        "level": 95,
+        "icon": "🧩"
+      },
+      {
+        "name": "Team Collaboration",
+        "level": 90,
+        "icon": "👥"
+      },
+      {
+        "name": "Communication",
+        "level": 88,
+        "icon": "💬"
+      }
+    ]
+  }
+}
