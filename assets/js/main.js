@@ -191,20 +191,40 @@ function createProjectCard(project) {
     const card = document.createElement('article');
     card.className = 'project-card fade-in';
     card.dataset.tech = project.tech.join(' ').toLowerCase();
-    card.dataset.type = project.type || 'frontend'; // Use the type from JSON
+    card.dataset.type = project.type || 'fullstack';
     
-    // Handle image source - check if it's a local asset
+    // Handle image source
     let imageUrl = project.image;
-    
-    // If it's a local path starting with 'assets/', use it directly
-    // Otherwise, assume it's a placeholder URL
     if (!project.image.startsWith('assets/') && !project.image.startsWith('http')) {
-        // Generate a placeholder image if no image is provided
         imageUrl = `https://picsum.photos/600/400?random=${project.id}&grayscale`;
     }
     
-    // Add lazy loading and error handling for images
-    const imageHtml = `
+    // Generate links HTML only if URLs exist
+    const demoLink = project.demo ? `
+        <a href="${project.demo}" class="btn btn--primary project-card__link" 
+           target="_blank" rel="noopener noreferrer" aria-label="View live demo of ${project.title}">
+            Live Demo
+        </a>
+    ` : `
+        <button class="btn btn--primary project-card__link btn--disabled" 
+                disabled aria-label="Live demo not available for ${project.title}">
+            Demo N/A
+        </button>
+    `;
+    
+    const githubLink = project.github ? `
+        <a href="${project.github}" class="btn btn--secondary project-card__link" 
+           target="_blank" rel="noopener noreferrer" aria-label="View source code of ${project.title} on GitHub">
+            GitHub
+        </a>
+    ` : `
+        <button class="btn btn--secondary project-card__link btn--disabled" 
+                disabled aria-label="Source code not available for ${project.title}">
+            Code Private
+        </button>
+    `;
+    
+    card.innerHTML = `
         <div class="project-card__image-container">
             <img 
                 src="${imageUrl}" 
@@ -215,10 +235,6 @@ function createProjectCard(project) {
             >
             <div class="project-card__image-overlay"></div>
         </div>
-    `;
-    
-    card.innerHTML = `
-        ${imageHtml}
         <div class="project-card__content">
             <h3 class="project-card__title">${project.title}</h3>
             <p class="project-card__description">${project.description}</p>
@@ -226,14 +242,8 @@ function createProjectCard(project) {
                 ${project.tech.map(tech => `<span class="project-card__tech-tag">${tech}</span>`).join('')}
             </div>
             <div class="project-card__links">
-                <a href="${project.demo}" class="btn btn--primary project-card__link" 
-                   target="_blank" rel="noopener noreferrer" aria-label="View live demo of ${project.title}">
-                    Live Demo
-                </a>
-                <a href="${project.github}" class="btn btn--secondary project-card__link" 
-                   target="_blank" rel="noopener noreferrer" aria-label="View source code of ${project.title} on GitHub">
-                    GitHub
-                </a>
+                ${demoLink}
+                ${githubLink}
             </div>
         </div>
     `;

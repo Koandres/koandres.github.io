@@ -296,7 +296,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('https://picsum.photos/800/600?random=1') center/cover no-repeat;
+    background: url('../images/background.jpg') center/cover no-repeat;
     opacity: 0.9;
 }
 
@@ -511,6 +511,70 @@ body {
 .project-card__link {
     flex: 1;
     text-align: center;
+}
+/* Disabled Button Styles */
+.btn--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    position: relative;
+}
+
+.btn--disabled::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+/* Project Card Specific Adjustments */
+.project-card__link.btn--disabled {
+    flex: 1;
+    min-width: 120px;
+}
+
+/* Alternative: Show different text for unavailable links */
+.project-card__link[disabled] {
+    background-color: var(--color-bg-tertiary) !important;
+    border-color: var(--color-border) !important;
+    color: var(--color-text-light) !important;
+}
+
+/* Tooltip for unavailable links */
+.project-card__link[disabled]:hover::before {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-bg);
+    color: var(--color-text);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    z-index: 100;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-xs);
+}
+
+.project-card__link[disabled]:hover::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--color-border) transparent transparent transparent;
 }
 
 /* Skills Section */

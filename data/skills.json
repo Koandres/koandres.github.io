@@ -3,87 +3,137 @@
     "frontend": [
       {
         "name": "HTML5",
-        "level": 95,
+        "level": 87,
         "icon": "🔧",
-        "years": 5,
-        "description": "Semantic HTML, accessibility, modern APIs"
+        "years": 4,
+        "description": "Semantic markup, accessibility, modern HTML APIs"
       },
       {
         "name": "CSS3",
-        "level": 90,
+        "level": 86,
         "icon": "🎨",
-        "years": 5,
+        "years": 4,
         "description": "Flexbox, Grid, animations, responsive design"
       },
       {
         "name": "JavaScript",
-        "level": 92,
+        "level": 60,
         "icon": "⚡",
-        "years": 4,
-        "description": "ES6+, DOM manipulation, async programming"
+        "years": 2,
+        "description": "ES6+, DOM manipulation, async programming, modern JS features"
       }
     ],
     "backend": [
       {
-        "name": "Node.js",
-        "level": 88,
-        "icon": "🟢",
-        "years": 3,
-        "description": "Express, REST APIs, middleware"
-      },
-      {
         "name": "Python",
-        "level": 85,
+        "level": 90,
         "icon": "🐍",
         "years": 4,
-        "description": "Django, Flask, data analysis"
+        "description": "Web development, data analysis, automation, scripting"
       },
       {
-        "name": "MongoDB",
+        "name": "PHP",
         "level": 80,
-        "icon": "🍃",
+        "icon": "🐘",
+        "years": 4,
+        "description": "Server-side scripting, WordPress development, web applications"
+      },
+      {
+        "name": "Django",
+        "level": 77,
+        "icon": "🎯",
+        "years": 2,
+        "description": "Full-stack web framework, ORM, authentication, REST APIs"
+      },
+      {
+        "name": "Flask",
+        "level": 82,
+        "icon": "🔥",
         "years": 3,
-        "description": "NoSQL, aggregation, indexing"
+        "description": "Micro web framework, RESTful APIs, lightweight applications"
+      },
+      {
+        "name": "TensorFlow",
+        "level": 84,
+        "icon": "🧠",
+        "years": 3,
+        "description": "Machine learning, neural networks, AI model development"
+      },
+      {
+        "name": "MySQL",
+        "level": 85,
+        "icon": "💾",
+        "years": 4,
+        "description": "Relational database, SQL queries, optimization, transactions"
+      },
+      {
+        "name": "PostgreSQL",
+        "level": 72,
+        "icon": "🐘",
+        "years": 3,
+        "description": "Advanced SQL, JSON support, scalability, ACID compliance"
+      },
+      {
+        "name": "RESTful API",
+        "level": 79,
+        "icon": "🔌",
+        "years": 3,
+        "description": "API design, endpoints, authentication, documentation"
       }
     ],
     "tools": [
       {
         "name": "Git",
-        "level": 90,
-        "icon": "📝",
-        "years": 4,
-        "description": "Version control, branching, collaboration"
-      },
-      {
-        "name": "Docker",
-        "level": 75,
-        "icon": "🐳",
-        "years": 2,
-        "description": "Containerization, Docker Compose"
-      },
-      {
-        "name": "AWS",
         "level": 70,
-        "icon": "☁️",
-        "years": 2,
-        "description": "EC2, S3, Lambda, CloudFront"
+        "icon": "📝",
+        "years": 3,
+        "description": "Version control, branching strategies, collaboration workflows"
+      },
+      {
+        "name": "VS Code",
+        "level": 92,
+        "icon": "💻",
+        "years": 4,
+        "description": "Code editor, extensions, debugging, productivity tools"
+      },
+      {
+        "name": "Postman",
+        "level": 85,
+        "icon": "📮",
+        "years": 3,
+        "description": "API testing, documentation, automated testing"
       }
     ],
     "softSkills": [
       {
+        "name": "Effective Communication",
+        "level": 88,
+        "icon": "💬",
+        "description": "Clear articulation of ideas, active listening, professional writing"
+      },
+      {
         "name": "Problem Solving",
-        "level": 95,
-        "icon": "🧩"
+        "level": 92,
+        "icon": "🧩",
+        "description": "Analytical thinking, debugging, algorithm design, creative solutions"
+      },
+      {
+        "name": "Time Management",
+        "level": 85,
+        "icon": "⏰",
+        "description": "Task prioritization, meeting deadlines, efficient workflow"
       },
       {
         "name": "Team Collaboration",
-        "level": 90,
-        "icon": "👥"
+        "level": 87,
+        "icon": "👥",
+        "description": "Agile methodologies, code reviews, pair programming, conflict resolution"
       },
       {
-        "name": "Communication",
-        "level": 88,
-        "icon": "💬"
+        "name": "Adaptability",
+        "level": 90,
+        "icon": "🔄",
+        "description": "Learning new technologies, embracing change, flexibility"
       }
     ]
   }
