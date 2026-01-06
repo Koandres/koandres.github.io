@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Internal Evaluation System",
-      "description": "Internal evaluation system with interactive dashboards for tracking survey responses, completion rates, and performance metrics. Features questionnaire management, automated reporting, and role-based access for staff and students.",
+      "description": "Internal evaluation system with interactive dashboards for tracking survey responses, completion rates, and performance metrics. Features questionnaire management, automated reporting, and role-based access for staff and students. (Team Project)",
       "tech": [
         "JavaScript",
         "Chart.js",
@@ -46,7 +46,7 @@
     {
       "id": 4,
       "title": "Jelajah Tegal",
-      "description": "A mobile-based information and booking platform that helps users discover tourist destinations, local cuisine, accommodations, and events in Tegal. Easily find details, book tickets, and plan your visit—perfect for both local and out-of-town travelers.",
+      "description": "A mobile-based information and booking platform that helps users discover tourist destinations, local cuisine, accommodations, and events in Tegal. Easily find details, book tickets, and plan your visit—perfect for both local and out-of-town travelers. (Team Project)",
       "tech": [
         "CodeIgniter",
         "MySQL",
