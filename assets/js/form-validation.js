@@ -3,6 +3,10 @@
  * Handles contact form validation and submission with real-time feedback
  */
 
+// Isi dengan endpoint Formspree, mis. 'https://formspree.io/f/xxxxxxxx'.
+// Jika kosong, form membuka aplikasi email (mailto) sebagai gantinya.
+const FORM_ENDPOINT = '';
+
 document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
 });
@@ -20,7 +24,7 @@ function initContactForm() {
     
     // Validation patterns
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const namePattern = /^[A-Za-z\s]{2,50}$/;
+    const namePattern = /^[\p{L}\s.'-]{2,50}$/u;
     
     // Real-time validation
     [nameInput, emailInput, messageInput].forEach(input => {
@@ -43,28 +47,30 @@ function initContactForm() {
         const isMessageValid = validateField(messageInput);
         
         if (!isNameValid || !isEmailValid || !isMessageValid) {
-            showFormError('Please fix all errors before submitting.');
+            showFormError(t('form.fix'));
             return;
         }
         
-        // Prepare form data
-        const formData = {
-            name: nameInput.value.trim(),
-            email: emailInput.value.trim(),
-            subject: document.getElementById('subject')?.value.trim() || '',
-            message: messageInput.value.trim(),
-            timestamp: new Date().toISOString()
-        };
+        // Tanpa endpoint: buka aplikasi email, jangan tampilkan "berhasil terkirim"
+        if (!FORM_ENDPOINT) {
+            const subject = document.getElementById('subject').value.trim() || t('form.mailSubject');
+            const body = `${messageInput.value.trim()}\n\n${nameInput.value.trim()} (${emailInput.value.trim()})`;
+            window.location.href = `mailto:koaan16@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            return;
+        }
         
         // Show loading state
         const originalButtonText = submitButton.textContent;
-        submitButton.textContent = 'Sending...';
+        submitButton.textContent = t('form.sending');
         submitButton.disabled = true;
         
         try {
-            // In a real application, this would be an API endpoint
-            // For demo purposes, we'll simulate a successful submission
-            await simulateFormSubmission(formData);
+            const response = await fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                headers: { Accept: 'application/json' },
+                body: new FormData(contactForm)
+            });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
             
             // Show success message
             successMessage.style.display = 'block';
@@ -79,7 +85,7 @@ function initContactForm() {
             }, 5000);
             
         } catch (error) {
-            showFormError('Failed to send message. Please try again later.');
+            showFormError(t('form.fail'));
             console.error('Form submission error:', error);
             
         } finally {
@@ -103,14 +109,14 @@ function initContactForm() {
         // Required field validation
         if (field.required && !field.value.trim()) {
             isValid = false;
-            errorMessage = 'This field is required';
+            errorMessage = t('form.required');
         }
         
         // Email validation
         if (field.type === 'email' && field.value.trim()) {
             if (!emailPattern.test(field.value.trim())) {
                 isValid = false;
-                errorMessage = 'Please enter a valid email address';
+                errorMessage = t('form.emailInvalid');
             }
         }
         
@@ -118,7 +124,7 @@ function initContactForm() {
         if (field.id === 'name' && field.value.trim()) {
             if (!namePattern.test(field.value.trim())) {
                 isValid = false;
-                errorMessage = 'Name must be 2-50 characters and contain only letters';
+                errorMessage = t('form.nameInvalid');
             }
         }
         
@@ -126,12 +132,12 @@ function initContactForm() {
         if (field.id === 'message' && field.value.trim()) {
             if (field.value.trim().length < 10) {
                 isValid = false;
-                errorMessage = 'Message must be at least 10 characters';
+                errorMessage = t('form.msgShort');
             }
             
             if (field.value.trim().length > 1000) {
                 isValid = false;
-                errorMessage = 'Message must be less than 1000 characters';
+                errorMessage = t('form.msgLong');
             }
         }
         
@@ -172,27 +178,9 @@ function initContactForm() {
         errorContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
     
-    // Simulate form submission (replace with actual API call)
-    async function simulateFormSubmission(formData) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                // Simulate random success/failure for demo
-                const isSuccess = Math.random() > 0.1; // 90% success rate
-                
-                if (isSuccess) {
-                    // Log to console for demo purposes
-                    console.log('Form submitted:', formData);
-                    resolve();
-                } else {
-                    reject(new Error('Simulated server error'));
-                }
-            }, 1500);
-        });
-    }
-    
     // Add keyboard navigation support
     contactForm.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && e.target.type !== 'textarea') {
+        if (e.key === 'Enter' && e.target.tagName === 'INPUT') {
             e.preventDefault();
             
             // Find next focusable element

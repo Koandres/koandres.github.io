@@ -3,27 +3,88 @@
     {
       "id": 1,
       "title": "Internal Evaluation System",
-      "description": "Internal evaluation system with interactive dashboards for tracking survey responses, completion rates, and performance metrics. Features questionnaire management, automated reporting, and role-based access for staff and students. (Team Project)",
+      "description": {
+        "en": "Internal evaluation system with interactive dashboards for tracking survey responses, completion rates, and performance metrics. Features questionnaire management, automated reporting, and role-based access for staff and students. (Team Project)",
+        "id": "Sistem evaluasi internal dengan dashboard interaktif untuk memantau respons survei, tingkat penyelesaian, dan metrik kinerja. Dilengkapi manajemen kuesioner, laporan otomatis, dan akses berbasis peran untuk staf dan mahasiswa. (Proyek Tim)"
+      },
       "tech": [
         "JavaScript",
         "Chart.js",
         "CodeIgniter",
         "MySQL"
       ],
-      "image": "assets/images/projects/Screenshot (608).png",
+      "image": "assets/images/projects/internal-evaluation.webp",
       "demo": "https://synckue.poltekharber.ac.id/",
       "github": "",
       "type": "fullstack"
     },
     {
+      "id": 6,
+      "title": "Buku Gudang",
+      "description": {
+        "en": "Mini ERP covering purchase request, approval, purchase order, partial goods receipt, and stock card, with a dashboard, CSV-exportable reports, an activity log, and role-based access enforced on the server. Uses fictional data. (Practice Project)",
+        "id": "Mini ERP untuk alur permintaan pembelian, persetujuan, pesanan pembelian, penerimaan barang bertahap, dan kartu stok, dengan dashboard, laporan yang dapat diekspor ke CSV, log aktivitas, dan hak akses per peran yang ditegakkan di server. Memakai data fiktif. (Proyek Latihan)"
+      },
+      "tech": [
+        "Laravel",
+        "Inertia.js",
+        "React",
+        "Tailwind CSS",
+        "SQLite"
+      ],
+      "image": "assets/images/projects/buku-gudang.webp",
+      "demo": "",
+      "github": "https://github.com/Koandres/buku-gudang",
+      "type": "fullstack"
+    },
+    {
+      "id": 5,
+      "title": "Kasir Kertas",
+      "description": {
+        "en": "Lightweight point-of-sale app for small shops and cafés: a single checkout screen, one SQLite file for all data, and 58 mm or 80 mm paper receipts. Includes reports, dark mode, and data backup/restore. (Practice Project)",
+        "id": "Aplikasi kasir (point of sale) ringan untuk warung, kafe, dan toko kecil: satu layar untuk transaksi, satu berkas SQLite untuk seluruh data, dan struk kertas 58 mm atau 80 mm. Dilengkapi laporan, mode gelap, serta backup dan restore data. (Proyek Latihan)"
+      },
+      "tech": [
+        "Laravel",
+        "Inertia.js",
+        "React",
+        "Tailwind CSS",
+        "SQLite"
+      ],
+      "image": "assets/images/projects/kasir-kertas.webp",
+      "demo": "",
+      "github": "https://github.com/Koandres/kasir-kertas",
+      "type": "fullstack"
+    },
+    {
+      "id": 4,
+      "title": "Jelajah Tegal",
+      "description": {
+        "en": "A mobile-based information and booking platform that helps users discover tourist destinations, local cuisine, accommodations, and events in Tegal. Easily find details, book tickets, and plan your visit—perfect for both local and out-of-town travelers. (Team Project)",
+        "id": "Platform informasi dan pemesanan berbasis mobile yang membantu pengguna menemukan destinasi wisata, kuliner lokal, penginapan, dan acara di Tegal. Temukan detail, pesan tiket, dan rencanakan kunjungan dengan mudah—cocok untuk wisatawan lokal maupun luar kota. (Proyek Tim)"
+      },
+      "tech": [
+        "CodeIgniter",
+        "MySQL",
+        "Git"
+      ],
+      "image": "assets/images/projects/jelajah-tegal.webp",
+      "demo": "https://play.google.com/store/apps/details?id=com.jegal.jelajahtegal",
+      "github": "",
+      "type": "backend"
+    },
+    {
       "id": 2,
       "title": "SiMun",
-      "description": "Your all-in-one digital guide for safe mountain climbing. Plan your hike, check your gear, assess your health, and learn essential trail information—all before you take the first step.",
+      "description": {
+        "en": "Your all-in-one digital guide for safe mountain climbing. Plan your hike, check your gear, assess your health, and learn essential trail information—all before you take the first step.",
+        "id": "Panduan digital lengkap untuk pendakian gunung yang aman. Rencanakan pendakian, periksa perlengkapan, nilai kondisi kesehatan, dan pelajari informasi jalur penting—semuanya sebelum langkah pertama."
+      },
       "tech": [
         "Flutter",
         "TensorFlow"
       ],
-      "image": "assets/images/projects/Simun.png",
+      "image": "assets/images/projects/simun.webp",
       "demo": "https://play.google.com/store/apps/details?id=com.phb.simun",
       "github": "",
       "type": "fullstack"
@@ -31,7 +92,10 @@
     {
       "id": 3,
       "title": "Portfolio Website",
-      "description": "Responsive portfolio website built with pure HTML, CSS, and JavaScript featuring modern design, smooth animations, and accessibility compliance.",
+      "description": {
+        "en": "Responsive portfolio website built with pure HTML, CSS, and JavaScript featuring modern design, smooth animations, and accessibility compliance.",
+        "id": "Situs portofolio responsif yang dibangun dengan HTML, CSS, dan JavaScript murni, dengan desain modern, animasi halus, dan kepatuhan aksesibilitas."
+      },
       "tech": [
         "HTML5",
         "CSS3",
@@ -42,20 +106,6 @@
       "demo": "https://koandres.github.io/",
       "github": "https://github.com/Koandres/koandres.github.io",
       "type": "frontend"
-    },
-    {
-      "id": 4,
-      "title": "Jelajah Tegal",
-      "description": "A mobile-based information and booking platform that helps users discover tourist destinations, local cuisine, accommodations, and events in Tegal. Easily find details, book tickets, and plan your visit—perfect for both local and out-of-town travelers. (Team Project)",
-      "tech": [
-        "CodeIgniter",
-        "MySQL",
-        "Git"
-      ],
-      "image": "assets/images/projects/jelajah tegal.webp",
-      "demo": "https://play.google.com/store/apps/details?id=com.jegal.jelajahtegal",
-      "github": "",
-      "type": "backend"
     }
   ]
 }

@@ -3,136 +3,160 @@
     "frontend": [
       {
         "name": "HTML5",
-        "level": 87,
-        "icon": "🔧",
         "years": 4,
-        "description": "Semantic markup, accessibility, modern HTML APIs"
+        "description": {
+          "en": "Semantic markup, accessibility, modern HTML APIs",
+          "id": "Markup semantik, aksesibilitas, API HTML modern"
+        }
       },
       {
         "name": "CSS3",
-        "level": 86,
-        "icon": "🎨",
         "years": 4,
-        "description": "Flexbox, Grid, animations, responsive design"
+        "description": {
+          "en": "Flexbox, Grid, animations, responsive design",
+          "id": "Flexbox, Grid, animasi, desain responsif"
+        }
       },
       {
         "name": "JavaScript",
-        "level": 60,
-        "icon": "⚡",
         "years": 2,
-        "description": "ES6+, DOM manipulation, async programming, modern JS features"
+        "description": {
+          "en": "ES6+, DOM manipulation, async programming, modern JS features",
+          "id": "ES6+, manipulasi DOM, pemrograman asinkron, fitur JS modern"
+        }
+      },
+      {
+        "name": "jQuery",
+        "description": {
+          "en": "DOM manipulation, event handling, AJAX, plugin-based UIs",
+          "id": "Manipulasi DOM, penanganan event, AJAX, UI berbasis plugin"
+        }
+      },
+      {
+        "name": "React",
+        "description": {
+          "en": "Component-based UI, hooks, Inertia.js pages (still learning)",
+          "id": "UI berbasis komponen, hooks, halaman Inertia.js (masih belajar)"
+        }
       }
     ],
     "backend": [
       {
-        "name": "Python",
-        "level": 90,
-        "icon": "🐍",
-        "years": 4,
-        "description": "Web development, data analysis, automation, scripting"
-      },
-      {
         "name": "PHP",
-        "level": 80,
-        "icon": "🐘",
         "years": 4,
-        "description": "Server-side scripting, WordPress development, web applications"
+        "description": {
+          "en": "Server-side scripting, web applications",
+          "id": "Scripting sisi server, aplikasi web"
+        }
       },
       {
-        "name": "Django",
-        "level": 77,
-        "icon": "🎯",
-        "years": 2,
-        "description": "Full-stack web framework, ORM, authentication, REST APIs"
-      },
-      {
-        "name": "Flask",
-        "level": 82,
-        "icon": "🔥",
-        "years": 3,
-        "description": "Micro web framework, RESTful APIs, lightweight applications"
-      },
-      {
-        "name": "TensorFlow",
-        "level": 84,
-        "icon": "🧠",
-        "years": 3,
-        "description": "Machine learning, neural networks, AI model development"
+        "name": "CodeIgniter 3",
+        "description": {
+          "en": "MVC framework, controllers/models/views, query builder, enterprise web applications",
+          "id": "Framework MVC, controller/model/view, query builder, aplikasi web enterprise"
+        }
       },
       {
         "name": "MySQL",
-        "level": 85,
-        "icon": "💾",
         "years": 4,
-        "description": "Relational database, SQL queries, optimization, transactions"
-      },
-      {
-        "name": "PostgreSQL",
-        "level": 72,
-        "icon": "🐘",
-        "years": 3,
-        "description": "Advanced SQL, JSON support, scalability, ACID compliance"
+        "description": {
+          "en": "Relational database, SQL queries, optimization, transactions",
+          "id": "Basis data relasional, kueri SQL, optimasi, transaksi"
+        }
       },
       {
         "name": "RESTful API",
-        "level": 79,
-        "icon": "🔌",
         "years": 3,
-        "description": "API design, endpoints, authentication, documentation"
+        "description": {
+          "en": "API design, endpoints, authentication, documentation",
+          "id": "Desain API, endpoint, autentikasi, dokumentasi"
+        }
+      },
+      {
+        "name": "PostgreSQL",
+        "years": 3,
+        "description": {
+          "en": "Advanced SQL, JSON support, scalability, ACID compliance",
+          "id": "SQL lanjutan, dukungan JSON, skalabilitas, kepatuhan ACID"
+        }
+      },
+      {
+        "name": "Laravel",
+        "description": {
+          "en": "MVC framework, Eloquent ORM, migrations, policies, Pest testing",
+          "id": "Framework MVC, Eloquent ORM, migrasi, policy, pengujian dengan Pest"
+        }
+      },
+      {
+        "name": "Python",
+        "years": 4,
+        "description": {
+          "en": "Web development, data analysis, automation, scripting",
+          "id": "Pengembangan web, analisis data, otomasi, scripting"
+        }
+      },
+      {
+        "name": "Django",
+        "years": 2,
+        "description": {
+          "en": "Full-stack web framework, ORM, authentication, REST APIs",
+          "id": "Framework web full-stack, ORM, autentikasi, REST API"
+        }
+      },
+      {
+        "name": "Flask",
+        "years": 3,
+        "description": {
+          "en": "Micro web framework, RESTful APIs, lightweight applications",
+          "id": "Micro framework web, RESTful API, aplikasi ringan"
+        }
+      },
+      {
+        "name": "TensorFlow",
+        "years": 3,
+        "description": {
+          "en": "Machine learning, neural networks, AI model development",
+          "id": "Machine learning, jaringan saraf, pengembangan model AI"
+        }
       }
     ],
     "tools": [
       {
         "name": "Git",
-        "level": 70,
-        "icon": "📝",
         "years": 3,
-        "description": "Version control, branching strategies, collaboration workflows"
-      },
-      {
-        "name": "VS Code",
-        "level": 92,
-        "icon": "💻",
-        "years": 4,
-        "description": "Code editor, extensions, debugging, productivity tools"
+        "description": {
+          "en": "Version control, branching strategies, collaboration workflows",
+          "id": "Kontrol versi, strategi branching, alur kolaborasi"
+        }
       },
       {
         "name": "Postman",
-        "level": 85,
-        "icon": "📮",
         "years": 3,
-        "description": "API testing, documentation, automated testing"
+        "description": {
+          "en": "API testing, documentation, automated testing",
+          "id": "Pengujian API, dokumentasi, pengujian otomatis"
+        }
       }
     ],
     "softSkills": [
       {
         "name": "Effective Communication",
-        "level": 88,
-        "icon": "💬",
         "description": "Clear articulation of ideas, active listening, professional writing"
       },
       {
         "name": "Problem Solving",
-        "level": 92,
-        "icon": "🧩",
         "description": "Analytical thinking, debugging, algorithm design, creative solutions"
       },
       {
         "name": "Time Management",
-        "level": 85,
-        "icon": "⏰",
         "description": "Task prioritization, meeting deadlines, efficient workflow"
       },
       {
         "name": "Team Collaboration",
-        "level": 87,
-        "icon": "👥",
         "description": "Agile methodologies, code reviews, pair programming, conflict resolution"
       },
       {
         "name": "Adaptability",
-        "level": 90,
-        "icon": "🔄",
         "description": "Learning new technologies, embracing change, flexibility"
       }
     ]

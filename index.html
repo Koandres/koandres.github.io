@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koandres - Software Engineer/AI Developer</title>
-    <meta name="description" content="Modern portfolio website showcasing software engineering projects and skills">
-    <meta name="keywords" content="software engineer, web developer, portfolio, JavaScript, HTML, CSS">
+    <title>Koandres - Web Developer</title>
+    <meta name="description" content="Koandres is a web developer building ERP systems, REST APIs, and dashboards with PHP, CodeIgniter 3, and MySQL.">
     <meta name="author" content="Koandres">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="assets/css/variables.css" as="style">
-    <link rel="preload" href="assets/css/style.css" as="style">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://koandres.github.io/">
+    <meta property="og:title" content="Koandres - Web Developer">
+    <meta property="og:description" content="Koandres is a web developer building ERP systems, REST APIs, and dashboards with PHP, CodeIgniter 3, and MySQL.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://koandres.github.io/">
+    <meta property="og:image" content="https://koandres.github.io/assets/images/PASFOTO.jpg">
+    <script>
+        try {
+            const saved = localStorage.getItem('portfolio-theme');
+            const theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.dataset.theme = theme;
+        } catch (e) { /* storage tidak tersedia */ }
+    </script>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/variables.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/mobile-style.css">
+    <link rel="stylesheet" href="assets/css/variables.css?v=8">
+    <link rel="stylesheet" href="assets/css/style.css?v=8">
+    <link rel="stylesheet" href="assets/css/mobile-style.css?v=8">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
@@ -27,18 +36,18 @@
 </head>
 <body>
     <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <a href="#main-content" class="skip-to-content" data-i18n="skip">Skip to main content</a>
     
     <!-- Header & Navigation -->
     <header class="header">
     <div class="container">
         <nav class="nav">
-        <a href="/" class="nav__logo" aria-label="Home">
+        <a href="#hero" class="nav__logo" aria-label="Home" data-i18n-attr="aria-label:nav.homeLabel">
             <span class="nav__logo-text">K</span>
         </a>
         
         <!-- HAMBURGER BUTTON -->
-        <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <button class="nav__hamburger" aria-label="Toggle menu" data-i18n-attr="aria-label:nav.menu" aria-expanded="false">
             <span class="nav__hamburger-line"></span>
             <span class="nav__hamburger-line"></span>
             <span class="nav__hamburger-line"></span>
@@ -49,13 +58,16 @@
         
         <!-- NAVIGATION MENU -->
         <ul class="nav__menu">
-            <li class="nav__item"><a href="#hero" class="nav__link" data-nav-link>Home</a></li>
-            <li class="nav__item"><a href="#projects" class="nav__link" data-nav-link>Projects</a></li>
-            <li class="nav__item"><a href="#skills" class="nav__link" data-nav-link>Skills</a></li>
-            <li class="nav__item"><a href="#experience" class="nav__link" data-nav-link>Experience</a></li>
-            <li class="nav__item"><a href="#contact" class="nav__link" data-nav-link>Contact</a></li>
+            <li class="nav__item"><a href="#hero" class="nav__link" data-nav-link data-i18n="nav.home">Home</a></li>
+            <li class="nav__item"><a href="#projects" class="nav__link" data-nav-link data-i18n="nav.projects">Projects</a></li>
+            <li class="nav__item"><a href="#skills" class="nav__link" data-nav-link data-i18n="nav.skills">Skills</a></li>
+            <li class="nav__item"><a href="#experience" class="nav__link" data-nav-link data-i18n="nav.experience">Experience</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link" data-nav-link data-i18n="nav.contact">Contact</a></li>
             <li class="nav__item">
-            <button class="theme-toggle" aria-label="Toggle dark mode">
+            <button class="lang-toggle" aria-label="Switch language" data-i18n-attr="aria-label:nav.lang">ID</button>
+            </li>
+            <li class="nav__item">
+            <button class="theme-toggle" aria-label="Toggle dark mode" data-i18n-attr="aria-label:nav.theme">
                 <span class="theme-toggle__icon" data-theme-icon>🌙</span>
             </button>
             </li>
@@ -69,21 +81,23 @@
         <section id="hero" class="hero section">
             <div class="container">
                 <div class="hero__content">
-                    <p class="hero__greeting">Hello, I'm</p>
+                    <p class="hero__greeting" data-i18n="hero.greeting">Hello, I'm</p>
                     <h1 class="hero__title">Koandres</h1>
-                    <h2 class="hero__subtitle">Software Engineer/AI Developer</h2>
-                    <p class="hero__description">
-                        I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive. 
-                        Let's bring your ideas to life!
+                    <h2 class="hero__subtitle" data-i18n="hero.subtitle">Web Developer</h2>
+                    <p class="hero__description" data-i18n="hero.desc">
+                        I build ERP systems, REST APIs, and dashboards with PHP, CodeIgniter, and MySQL.
                     </p>
                     <div class="hero__buttons">
-                        <a href="#projects" class="btn btn--primary" data-scroll-to>View Projects</a>
-                        <a href="#contact" class="btn btn--secondary" data-scroll-to>Contact Me</a>
+                        <a href="#projects" class="btn btn--primary" data-scroll-to data-i18n="hero.projects">View Projects</a>
+                        <a href="assets/CV_English_Koandres_20261123.pdf" class="btn btn--secondary" download
+                           data-cv data-cv-en="assets/CV_English_Koandres_20261123.pdf"
+                           data-cv-id="assets/CV_Koandres_20261123.pdf"
+                           data-i18n="hero.cv">Download CV (PDF)</a>
+                        <a href="#contact" class="btn btn--secondary" data-scroll-to data-i18n="hero.contact">Contact Me</a>
                     </div>
                 </div>
                 <div class="hero__image">
-                    <!-- Placeholder for hero image -->
-                    <div class="hero__image-placeholder" role="img" aria-label="Koandres, Software Engineer"></div>
+                    <div class="hero__image-placeholder" role="img" aria-label="Photo of Koandres, Web Developer" data-i18n-attr="aria-label:hero.image"></div>
                 </div>
             </div>
         </section>
@@ -92,16 +106,15 @@
         <section id="projects" class="projects section">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Featured Projects</h2>
-                    <p class="section__subtitle">A selection of my recent work</p>
+                    <h2 class="section__title" data-i18n="projects.title">Featured Projects</h2>
                 </div>
                 
                 <!-- Project Filter -->
                 <div class="projects__filter">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="frontend">Frontend</button>
-                    <button class="filter-btn" data-filter="backend">Backend</button>
-                    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
+                    <button class="filter-btn" data-filter="frontend" data-i18n="filter.frontend">Frontend</button>
+                    <button class="filter-btn" data-filter="backend" data-i18n="filter.backend">Backend</button>
+                    <button class="filter-btn" data-filter="fullstack" data-i18n="filter.fullstack">Full Stack</button>
                 </div>
                 
                 <!-- Projects Grid -->
@@ -115,19 +128,19 @@
         <section id="skills" class="skills section">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Technical Skills</h2>
-                    <p class="section__subtitle">Technologies I work with, rated by proficiency</p>
+                    <h2 class="section__title" data-i18n="skills.title">Technical Skills</h2>
+                    <p class="section__subtitle" data-i18n="skills.subtitle">Technologies I work with</p>
                 </div>
                 
                 <!-- Skills Tabs Navigation -->
-                <div class="skills__tabs" role="tablist" aria-label="Skills categories">
-                    <button class="skills__tab active" data-tab="frontend" role="tab" aria-selected="true" aria-controls="frontend-panel">
+                <div class="skills__tabs" role="tablist" aria-label="Skills categories" data-i18n-attr="aria-label:skills.tablist">
+                    <button class="skills__tab active" id="frontend-tab" data-tab="frontend" role="tab" aria-selected="true" aria-controls="frontend-panel">
                         Frontend
                     </button>
-                    <button class="skills__tab" data-tab="backend" role="tab" aria-selected="false" aria-controls="backend-panel">
+                    <button class="skills__tab" id="backend-tab" data-tab="backend" role="tab" aria-selected="false" aria-controls="backend-panel">
                         Backend
                     </button>
-                    <button class="skills__tab" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools-panel">
+                    <button class="skills__tab" id="tools-tab" data-tab="tools" role="tab" aria-selected="false" aria-controls="tools-panel" data-i18n="skills.tools">
                         Tools & DevOps
                     </button>
                     <!-- <button class="skills__tab" data-tab="softSkills" role="tab" aria-selected="false" aria-controls="softskills-panel">
@@ -165,22 +178,6 @@
                         </div>
                     </div> -->
                 </div>
-                
-                <!-- Skill Summary Stats -->
-                <div class="skills__summary">
-                    <div class="skills__stat">
-                        <span class="skills__stat-number" id="total-skills">0</span>
-                        <span class="skills__stat-label">Total Skills</span>
-                    </div>
-                    <div class="skills__stat">
-                        <span class="skills__stat-number" id="avg-proficiency">0%</span>
-                        <span class="skills__stat-label">Average Proficiency</span>
-                    </div>
-                    <!-- <div class="skills__stat">
-                        <span class="skills__stat-number" id="total-years">0</span>
-                        <span class="skills__stat-label">Years Experience</span>
-                    </div> -->
-                </div>
             </div>
         </section>
 
@@ -188,28 +185,26 @@
         <section id="experience" class="experience section">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Experience & Education</h2>
-                    <p class="section__subtitle">My professional journey</p>
+                    <h2 class="section__title" data-i18n="exp.title">Experience & Education</h2>
+                    <p class="section__subtitle" data-i18n="exp.subtitle">My professional journey</p>
                 </div>
                 
                 <div class="timeline">
-                    <!-- Work Experience -->
                     <div class="timeline__item">
+                        <div class="timeline__meta">
+                            <span class="timeline__date" data-i18n="exp.askara.date">Feb 2026 - Aug 2026</span>
+                            <h3 class="timeline__title">Programmer</h3>
+                            <h4 class="timeline__subtitle">PT. Askara Tehno Indonesia</h4>
+                        </div>
                         <div class="timeline__content">
-                            <span class="timeline__date">2026 - 2026</span>
-                            <h3 class="timeline__title">Web Developer</h3>
-                            <h4 class="timeline__subtitle">PT Askara Internal</h4>
-                            <p class="timeline__description">
-                                •   Mengembangkan, memelihara, dan melakukan enhancement pada 4 aplikasi enterprise menggunakan PHP Native, CodeIgniter 3, MySql, dan PostgreSql. <br>
-                                •   Mengembangkan modul Checksheet Kendaraan pada SITA Legacy dengan menambahkan dukungan kendaraan roda dua yang sebelumnya hanya tersedia untuk kendaraan roda empat. <br>
-                                •   Berkontribusi dalam pengembangan sistem ERP yang mendukung proses Purchasing, Sales, Supply Chain Management (SCM), Warehouse, dan Delivery menggunakan CodeIgniter 3 dan MySql. <br>
-                                •   Mengembangkan dan mengamankan endpoint REST API pada sistem ERP (SITA) untuk mendukung integrasi dan akses data pada modul Customer, Supplier/Vendor, Item/Product, RFQ, Sales Order, Purchase Order, dan Audit Log, dengan menerapkan token-based authentication dan OAuth 2.0 serta pengaturan hak akses berbasis role. <br>
-                                •   Mengembangkan 5 data-driven business dashboard dengan mengolah data dari sistem enterprise melalui query dan data processing untuk mendukung customer demand analysis, marketing, MRP-to-PR monitoring, quantity & value trend analysis, serta procurement & shipping monitoring. <br>
-                                •   Terlibat dalam pengembangan Project Management System perusahaan yang mencakup pendataan project, monitoring progress, ticketing, serta pengelolaan dokumen transaksi seperti quotation dan invoice. <br>
-                                •   Mengembangkan dan melakukan enhancement pada Enterprise Operational Management System yang mencakup pengelolaan aset, maintenance aset, inventory/stok, booking ruangan, inspeksi Gemba, technical support, serta pengelolaan infrastruktur IT. <br>
-                                •   Mengimplementasikan fitur berdasarkan dokumen requirement dari System Analyst serta melakukan testing sebelum deployment. <br>
-                                •   Berkolaborasi dengan System Analyst dan tim terkait dalam proses pengembangan, pengujian, perbaikan bug, dan peningkatan sistem. <br>
-                            </p>
+                            <ul class="timeline__list">
+                                <li class="timeline__highlight"><span data-i18n="exp.askara.b2">Investigated and optimized complex queries across a 20+ related-table architecture, resolving staging/production server bottlenecks and cutting dashboard load time from 30+ seconds to 1 second.</span></li>
+                                <li><span data-i18n="exp.askara.b3">Built REST API endpoints for 7 ERP business modules with very low latency (response time &lt; 500ms) using token-based authentication and OAuth 2.0.</span></li>
+                                <li><span data-i18n="exp.askara.b1">Developed, maintained, and enhanced 4 core enterprise applications using native PHP, CodeIgniter 3, MySQL, and PostgreSQL.</span></li>
+                                <li><span data-i18n="exp.askara.b4">Took part in routine database maintenance to keep queries stable on logistics data holding hundreds of thousands of rows.</span></li>
+                                <li><span data-i18n="exp.askara.b5">Added two-wheeler vehicle support to the SITA Legacy Checksheet module through a database schema change, without disrupting existing data.</span></li>
+                                <li><span data-i18n="exp.askara.b6">Worked closely with the System Analyst to implement features, fix cross-functional bugs, and ensure the system passed testing before deployment.</span></li>
+                            </ul>
                             <div class="timeline__tags">
                                 <span class="tag">JavaScript</span>
                                 <span class="tag">CodeIgniter</span>
@@ -220,15 +215,17 @@
                     </div>
 
                     <div class="timeline__item">
-                        <div class="timeline__content">
-                            <span class="timeline__date">2024 - 2024</span>
+                        <div class="timeline__meta">
+                            <span class="timeline__date" data-i18n="exp.poltek.date">Mar 2024 - Oct 2024</span>
                             <h3 class="timeline__title">Web Developer</h3>
                             <h4 class="timeline__subtitle">Politeknik Harapan Bersama</h4>
-                            <p class="timeline__description">
-                                •	Developed an internal evaluation website using C13 framework and MySql, featuring dynamic CRUD operations, questionnaire package creation, and interactive dashboards. <br>
-                                •	Improved evaluation process efficiency by 30% by automating report generation and real-time dta visualization. <br>
-                                •	Built APIs serving 200+ active users (lecturers and students) with response times under 500ms. <br>
-                            </p>
+                        </div>
+                        <div class="timeline__content">
+                            <ul class="timeline__list">
+                                <li class="timeline__highlight"><span data-i18n="exp.poltek.b3">Built APIs serving 200+ active users.</span></li>
+                                <li><span data-i18n="exp.poltek.b2">Improved evaluation process efficiency through report automation and data visualization.</span></li>
+                                <li><span data-i18n="exp.poltek.b1">Developed an internal evaluation website using CodeIgniter 3 and MySQL.</span></li>
+                            </ul>
                             <div class="timeline__tags">
                                 <span class="tag">JavaScript</span>
                                 <span class="tag">CodeIgniter</span>
@@ -236,17 +233,19 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="timeline__item">
+                        <div class="timeline__meta">
+                            <span class="timeline__date" data-i18n="exp.inti.date">Aug 2023 - Dec 2023</span>
+                            <h3 class="timeline__title">Backend AI Developer Intern</h3>
+                            <h4 class="timeline__subtitle">PT. Inti Utama Solusindo</h4>
+                        </div>
                         <div class="timeline__content">
-                            <span class="timeline__date">2023 - 2023</span>
-                            <h3 class="timeline__title">Backend AI Developer</h3>
-                            <h4 class="timeline__subtitle">PT Inti Utama Solusido</h4>
-                            <p class="timeline__description">
-                                •	Developed backend systems for Automated Forklift (AGV) project using Django and PostgreSql. <br>
-                                •	Integrated computer vision and control system algorithms that improved forklift navigation accuracy by 25%. <br>
-                                •	Built and optimized APIs for real-time integration between sensors, AI models, and control interfaces. <br>
-                            </p>
+                            <ul class="timeline__list">
+                                <li class="timeline__highlight"><span data-i18n="exp.inti.b3">Built and optimized APIs for real-time integration between sensors, AI models, and control interfaces.</span></li>
+                                <li><span data-i18n="exp.inti.b2">Integrated an OpenCV-based computer vision system with a Django-based control system to process Automated Forklift navigation data in real time.</span></li>
+                                <li><span data-i18n="exp.inti.b1">Developed backend systems for the Automated Forklift (AGV) project using Django and PostgreSQL.</span></li>
+                            </ul>
                             <div class="timeline__tags">
                                 <span class="tag">Django</span>
                                 <span class="tag">Python</span>
@@ -255,23 +254,21 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Education -->
+
                     <div class="timeline__item">
-                        <div class="timeline__content">
+                        <div class="timeline__meta">
                             <span class="timeline__date">2020 - 2024</span>
-                            <h3 class="timeline__title">B.S. Computer Science</h3>
+                            <h3 class="timeline__title" data-i18n="edu.title">D4 Informatics Engineering (Applied Bachelor)</h3>
                             <h4 class="timeline__subtitle">Politeknik Harapan Bersama</h4>
-                            <p class="timeline__description">
-                                Graduated Summa Cum Laude with specialization in Informatics Engineering.
-                                Relevant coursework: Algorithms, Data Structures, Web Development, Database Systems, Machine Learning, Mobile Development.
-                            </p>
+                        </div>
+                        <div class="timeline__content">
+                            <p class="timeline__description" data-i18n="edu.desc">GPA 3.94 / 4.00. Relevant coursework: Algorithms, Data Structures, Web Development, Database Systems, Machine Learning, Mobile Development.</p>
                             <div class="timeline__tags">
-                                <span class="tag">Algorithms</span>
-                                <span class="tag">Data Structures</span>
-                                <span class="tag">Web Development</span>
-                                <span class="tag">Mobile Development</span>
-                                <span class="tag">Machine Learning</span>
+                                <span class="tag" data-i18n="edu.t1">Algorithms</span>
+                                <span class="tag" data-i18n="edu.t2">Data Structures</span>
+                                <span class="tag" data-i18n="edu.t3">Web Development</span>
+                                <span class="tag" data-i18n="edu.t4">Mobile Development</span>
+                                <span class="tag" data-i18n="edu.t5">Machine Learning</span>
                             </div>
                         </div>
                     </div>
@@ -283,14 +280,14 @@
         <section id="contact" class="contact section">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Get In Touch</h2>
-                    <p class="section__subtitle">Let's work together!</p>
+                    <h2 class="section__title" data-i18n="contact.title">Get In Touch</h2>
+                    <p class="section__subtitle" data-i18n="contact.subtitle">Let's work together!</p>
                 </div>
                 
                 <div class="contact__grid">
                     <div class="contact__info">
-                        <h3 class="contact__info-title">Contact Information</h3>
-                        <p class="contact__info-text">
+                        <h3 class="contact__info-title" data-i18n="contact.infoTitle">Contact Information</h3>
+                        <p class="contact__info-text" data-i18n="contact.infoText">
                             I'm currently open to new opportunities and interesting projects. 
                             Feel free to reach out if you'd like to collaborate!
                         </p>
@@ -306,15 +303,15 @@
                             <div class="contact__detail">
                                 <span class="contact__detail-icon">📍</span>
                                 <div>
-                                    <h4>Location</h4>
-                                    <p>Central Java, Indonesia</p>
+                                    <h4 data-i18n="contact.location">Location</h4>
+                                    <p data-i18n="contact.locationValue">Central Java, Indonesia</p>
                                 </div>
                             </div>
                             <div class="contact__detail">
                                 <span class="contact__detail-icon">💼</span>
                                 <div>
-                                    <h4>Availability</h4>
-                                    <p>Open to opportunities</p>
+                                    <h4 data-i18n="contact.availability">Availability</h4>
+                                    <p data-i18n="contact.availabilityValue">Open to opportunities</p>
                                 </div>
                             </div>
                         </div>
@@ -331,31 +328,32 @@
                     
                     <form id="contact-form" class="contact__form" novalidate>
                         <div class="form__group">
-                            <label for="name" class="form__label">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form__input" required>
+                            <label for="name" class="form__label" data-i18n="form.name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form__input" autocomplete="name" required>
                             <div class="form__error" id="name-error"></div>
                         </div>
                         
                         <div class="form__group">
-                            <label for="email" class="form__label">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form__input" required>
+                            <label for="email" class="form__label" data-i18n="form.email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form__input" autocomplete="email" required>
                             <div class="form__error" id="email-error"></div>
                         </div>
                         
                         <div class="form__group">
-                            <label for="subject" class="form__label">Subject</label>
+                            <label for="subject" class="form__label" data-i18n="form.subject">Subject</label>
                             <input type="text" id="subject" name="subject" class="form__input">
                         </div>
                         
                         <div class="form__group">
-                            <label for="message" class="form__label">Message *</label>
+                            <label for="message" class="form__label" data-i18n="form.message">Message *</label>
                             <textarea id="message" name="message" class="form__textarea" rows="5" required></textarea>
                             <div class="form__error" id="message-error"></div>
                         </div>
                         
-                        <button type="submit" class="btn btn--primary form__submit">Send Message</button>
+                        <button type="submit" class="btn btn--primary form__submit" data-i18n="form.send">Send Message</button>
+                        <p class="form__note" data-i18n="form.note">This form opens your email app; no message is stored on this site.</p>
                         
-                        <div class="form__success" id="form-success" style="display: none;">
+                        <div class="form__success" id="form-success" style="display: none;" data-i18n="form.success">
                             Message sent successfully! I'll get back to you soon.
                         </div>
                     </form>
@@ -369,12 +367,12 @@
         <div class="container">
             <div class="footer__content">
                 <p class="footer__copyright">
-                    &copy; <span id="current-year">2025</span> Koandres. All rights reserved.
+                    &copy; <span id="current-year">2026</span> Koandres. <span data-i18n="footer.rights">All rights reserved.</span>
                 </p>
-                <p class="footer__credits">
+                <p class="footer__credits" data-i18n="footer.credits">
                     Built with ❤️ using pure HTML, CSS, and JavaScript
                 </p>
-                <a href="#hero" class="footer__back-to-top" data-scroll-to aria-label="Back to top">
+                <a href="#hero" class="footer__back-to-top" data-scroll-to aria-label="Back to top" data-i18n-attr="aria-label:footer.top">
                     ↑
                 </a>
             </div>
@@ -382,11 +380,10 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/form-validation.js" defer></script>
-    <script src="assets/js/theme-toogle.js" defer></script>
-    <script src="assets/js/skills-manager.js" defer></script>
-    <script src="data/projects.json" type="application/json" defer></script>
-    <script src="data/skills.json" type="application/json" defer></script>
+    <script src="assets/js/i18n.js?v=8" defer></script>
+    <script src="assets/js/main.js?v=8" defer></script>
+    <script src="assets/js/form-validation.js?v=8" defer></script>
+    <script src="assets/js/theme-toggle.js?v=8" defer></script>
+    <script src="assets/js/skills-manager.js?v=8" defer></script>
 </body>
 </html>
